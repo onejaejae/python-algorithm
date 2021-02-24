@@ -1,7 +1,7 @@
 import sys
 import os
 
-# sys.stdin = open("c:\workspaces\python\코드 구현력 기르기\input.txt", "rt")
+sys.stdin = open("c:\workspaces\python\코드 구현력 기르기\input.txt", "rt")
 
 T = int(input())
 for t in range(T):
