@@ -15,6 +15,7 @@ for i in range(n):
         money = 10000 + a * 1000
     elif a == b or a == c:
         money = 1000 + a * 100
+
     # b==c를 a==b , a==c와 다르게 분기한 이유
     # b == c일 경우 b*100을 해야하기 때문이다.
     elif b == c:
