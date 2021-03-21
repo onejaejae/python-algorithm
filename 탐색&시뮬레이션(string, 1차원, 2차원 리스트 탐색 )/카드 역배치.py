@@ -2,7 +2,7 @@
 import sys
 import os
 
-sys.stdin = open(
+#sys.stdin = open(
     "c:\workspaces\python\탐색&시뮬레이션(string, 1차원, 2차원 리스트 탐색 )\input.txt", "rt")
 
 arr = [0] * 21
