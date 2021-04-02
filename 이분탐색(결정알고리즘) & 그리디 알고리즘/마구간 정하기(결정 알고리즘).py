@@ -4,31 +4,31 @@ import os
 # sys.stdin = open(
 #     "c:\workspaces\python\이분탐색(결정알고리즘) & 그리디 알고리즘\input.txt", "rt")
 
-n, m = map(int, input().split())
-arr = list(map(int, input().split()))
-
 
 def Count(mid):
     cnt = 1
-    sum = 0
-    for x in arr:
-        if sum+x > mid:
+    ep = arr[0]
+    for i in range(1, n):
+        if arr[i] - ep >= mid:
+            ep = arr[i]
             cnt += 1
-            sum = x
-        else:
-            sum += x
     return cnt
 
 
+n, c = map(int, input().split())
+arr = []
+for _ in range(n):
+    arr.append(int(input()))
+arr = sorted(arr)
 lt = 1
-rt = sum(arr)
+rt = max(arr)
 res = 0
-largest = max(arr)
+
 while lt <= rt:
     mid = (lt+rt)//2
-    if largest <= mid and Count(mid) <= m:
+    if Count(mid) >= c:
         res = mid
-        rt = mid-1
+        lt = mid+1
     else:
-        lt = mid + 1
+        rt = mid-1
 print(res)
