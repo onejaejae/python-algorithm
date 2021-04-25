@@ -10,7 +10,7 @@ def DFS(v):
         for i, value in enumerate(ch):
             if value == 1:
                 print(i, end=" ")
-        print()
+            print()
     else:
         ch[v] = 1
         DFS(v+1)
