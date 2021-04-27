@@ -7,7 +7,7 @@ def DFS2():
     global cnt
     if cnt == 5:
         cnt = cnt + 1
-        print(cnt)
+        print(cntg)
 
 
 if __name__ == "__main__":
