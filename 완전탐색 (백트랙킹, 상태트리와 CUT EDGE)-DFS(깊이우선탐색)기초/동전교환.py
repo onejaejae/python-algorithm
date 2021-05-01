@@ -5,28 +5,22 @@ import os
 #    "c:\workspaces\python\완전탐색 (백트랙킹, 상태트리와 CUT EDGE)-DFS(깊이우선탐색)기초\input.txt", "rt")
 
 
-def DFS(l):
-    global m, cnt
-
-    if m % arr[l] == 0:
-        cnt += m // arr[l]
+def DFS(l, sum):
+    if sum > m:
         return
+    if sum == m:
+        print(l)
+        sys.exit(0)
     else:
-        if m // arr[l] < 1:
-            DFS(l+1)
-        else:
-            cnt += m//arr[l]
-
-            m = m % arr[l]
-            DFS(l+1)
+        for i in range(n):
+            DFS(l+1, sum + arr[i])
 
 
 if __name__ == "__main__":
     n = int(input())
     arr = list(map(int, input().split()))
     m = int(input())
-    cnt = 0
+    res = -2200
     arr.sort(reverse=True)
 
-    DFS(0)
-    print(cnt)
+    DFS(0, 0)
