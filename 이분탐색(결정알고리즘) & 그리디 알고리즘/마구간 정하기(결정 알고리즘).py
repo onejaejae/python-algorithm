@@ -1,8 +1,8 @@
 import sys
 import os
 
-# sys.stdin = open(
-#     "c:\workspaces\python\이분탐색(결정알고리즘) & 그리디 알고리즘\input.txt", "rt")
+sys.stdin = open(
+    "c:\workspaces\python\이분탐색(결정알고리즘) & 그리디 알고리즘\input.txt", "rt")
 
 
 def Count(mid):
