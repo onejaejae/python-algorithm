@@ -6,12 +6,14 @@ sys.stdin = open("c:\workspaces\python\DFS,BFS\input.txt", "rt")
 
 def DFS(l, sum, time):
     global res
+
+    if time > m:
+        return
+
     if l == n:
-        if time > m:
-            return
-        else:
-            if res < sum:
-                res = sum
+        if res < sum:
+            res = sum
+
     else:
         DFS(l+1, sum+pv[l], time+pt[l])
         DFS(l+1, sum, time)
