@@ -28,4 +28,7 @@ if __name__ == "__main__":
                 cnt = 0
                 DFS(i, j)
                 res.append(cnt)
-    print(res)
+    print(len(res))
+    res.sort()
+    for x in res:
+        print(x)
