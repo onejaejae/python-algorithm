@@ -1,21 +1,15 @@
 def solution(name):
     answer = 0
+    min_move = len(name) - 1
+    next = 0
 
-    for x in name:
-        if x > "N":
-            answer += (91 - ord(x))
-        else:
-            answer += (ord(x) - 65)
+    for i, char in enumerate(name):
+        answer += min(ord(char) - ord('A'), ord('Z') - ord(char) + 1)
 
-    for i in range(1, len(name) - 1):
-        if name[i] != "A":
-            break
-    else:
-        print(answer + 1)
-        return answer + 1
+        next = i + 1
+        while next < len(name) and name[next] == 'A':
+            next += 1
 
-    print(answer + len(name) - 1)
-    return answer + len(name) - 1
-
-
-solution("JAN")
+        min_move = min(min_move, i + i + len(name) - next)
+    answer += min_move
+    return answer
